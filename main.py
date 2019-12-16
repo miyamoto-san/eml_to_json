@@ -14,10 +14,18 @@ def json_serial(obj):
 def print_help():
   print(__file__ + " [-b] [file ...]")
 
-def print_eml(filename, raw_body):
-  if filename.endswith('.eml'):
-    with open(filename, 'rb') as e:
-      print(json.dumps(eml_parser.decode_email_b(e.read(), include_raw_body=raw_body), default=json_serial))
+def print_eml(filename:str, raw_body:bool):
+  try:
+    if filename.endswith('.eml'):
+      with open(filename, 'rb') as e:
+        print(json.dumps(eml_parser.decode_email_b(e.read(), include_raw_body=raw_body), default=json_serial))
+    else:
+      raise Exception("Invalid file")
+  except IOError:
+    print("Unable to parse file. Does it exist?")
+    sys.exit(2)
+  except Exception as error:
+    print(error)
 
 def main(argv):
   try:
