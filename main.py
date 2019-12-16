@@ -12,7 +12,7 @@ def json_serial(obj):
         return serial
 
 def print_help():
-  print("main.py [-b] [file ...]")
+  print(__file__ + " [-b] [file ...]")
 
 def print_eml(filename, raw_body):
   if filename.endswith('.eml'):
