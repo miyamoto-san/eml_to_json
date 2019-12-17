@@ -12,7 +12,7 @@ def json_serial(obj):
         return serial
 
 def print_help():
-  print(__file__ + " [-b] [file ...]")
+  print(__file__ + " [-bi] [file ...]")
 
 def print_eml(filename:str, raw_body:bool):
   try:
