@@ -3,5 +3,5 @@ Little EML to JSON parser that prints to stdio. Converts .eml files to JSON. Pip
 
 Useage:
 ```
-main.py [-b] [file ...]
+main.py [-bi] [file ...]
 ```
